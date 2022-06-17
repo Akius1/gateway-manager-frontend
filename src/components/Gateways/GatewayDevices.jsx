@@ -14,7 +14,7 @@ import FormDialog from "../Modal";
 const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
   const classes = useStyle();
 
-  let groupData = gateway.response;
+  let groupData = gateway?.response;
 
   let paginationDetail = gateway?.response?.length;
   let offSet = (count) => {
@@ -49,7 +49,7 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
     <>
       <div className="title-style">
         <p className="group-count">
-          GATEWAYS <span> {gateway?.response?.length}</span>
+          GATEWAYS <span data-testid="counter"> {gateway?.response?.length}</span>
         </p>
       </div>
 
@@ -143,6 +143,7 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
               color: "rgb(74, 82, 255)",
             }}
             onClick={nextPage}
+            data-testid="button"
           >
             Next Page
           </Button>

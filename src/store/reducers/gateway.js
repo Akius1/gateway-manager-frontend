@@ -1,6 +1,6 @@
 import { gatewayConstants, namespace } from '../constants/gateway.constants';
 
-const initialState = {
+export const initialState = {
   loading: false,
   success: false,
   response: null,

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import {  Routes, Route } from "react-router-dom";
-import GatewayDevice from "./GatewayDoors";
+import GatewayDevice from "./GatewayDevices";
 import PeripheralDevice from "../Device/peripheralDevice";
 
 const GroupLayout = ({
