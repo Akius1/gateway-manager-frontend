@@ -4,12 +4,9 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function SelectAutoWidth({lock, locksValue, setLocks}) {
-  const initial = ["offline", "online"]
-  const [status, setStatus] = React.useState(initial[0])
- 
-  
+export default function SelectAutoWidth({status, setStatus, initial}) {
 
+  
   const handleChange = (event) => {
     setStatus(event.target.value);
   };
@@ -34,9 +31,6 @@ export default function SelectAutoWidth({lock, locksValue, setLocks}) {
             ))
           
           }
-         
-          {/* <MenuItem value={21}>Twenty one</MenuItem>
-          <MenuItem value={22}>Twenty one and a half</MenuItem> */}
         </Select>
       </FormControl>
     </div>

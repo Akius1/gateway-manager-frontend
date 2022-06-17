@@ -102,19 +102,19 @@ export const getGatewayById = (params) => {
 
 
   function success(response) {
-    return { type: gatewayConstants[`GET_${namespace}_SUCCESS`], response };
+    return { type:  peripheralConstants[`GET_${namespace2}_SUCCESS`], response };
   }
   function failure(error) {
     if (error && error.response) {
       const data = error.response.data;
       toast?.error(error.response?.data?.message);
       return {
-        type: gatewayConstants[`GET_${namespace}_FAILURE`],
+        type:  peripheralConstants[`GET_${namespace2}_FAILURE`],
         error: data.message,
       };
     }
     return {
-      type: gatewayConstants[`GET_${namespace}_FAILURE`],
+      type:  peripheralConstants[`GET_${namespace2}_FAILURE`],
       error: [
         {
           name: 'Network Error',
@@ -166,7 +166,7 @@ export const addDeviceToGateway = (id,data) => {
   };
 
   export const removeDeviceFromGateway = (gatewayId,deviceId) => {
-    let url = gatewayService.addGateway;
+    let url = gatewayService.removeDevice;
     return (dispatch) => {
       url(gatewayId,deviceId)
         .then((response) => {

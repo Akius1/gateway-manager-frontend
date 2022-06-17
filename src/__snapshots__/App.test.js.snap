@@ -1,0 +1,253 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should take a snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-8atqhb"
+  >
+    <div
+      class="makeStyles-navStyle-3 MuiBox-root css-8atqhb"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        GATEWAY SERVICE
+      </p>
+      <div
+        class="MuiFormControl-root MuiTextField-root makeStyles-textField-4 css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+      >
+        <div
+          class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl makeStyles-input-5 css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+        >
+          <input
+            aria-invalid="false"
+            class="MuiOutlinedInput-input MuiInputBase-input MuiInputBase-inputTypeSearch css-1g24dm6-MuiInputBase-input-MuiOutlinedInput-input"
+            id="outlined-search"
+            placeholder="Search field"
+            type="search"
+            value=""
+          />
+          <fieldset
+            aria-hidden="true"
+            class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+          >
+            <legend
+              class="css-hdw1oc"
+            >
+              <span
+                class="notranslate"
+              >
+                ​
+              </span>
+            </legend>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div
+      class="MuiBox-root css-1dw6sgr"
+    >
+      <div
+        class="sidebar"
+      >
+        <nav>
+          <a
+            activeclassname="link-active"
+            aria-current="page"
+            class="link active"
+            href="/"
+          >
+            <div
+              class="link"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"
+                />
+              </svg>
+              <h2>
+                Home
+              </h2>
+            </div>
+          </a>
+          <a
+            activeclassname="link-active"
+            aria-current="page"
+            class="link active"
+            href="/"
+          >
+             
+            <div
+              class="link"
+            >
+              <svg
+                aria-hidden="true"
+                class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+                data-testid="ImportantDevicesIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M23 11.01 18 11c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5c.55 0 1-.45 1-1v-9c0-.55-.45-.99-1-.99zM23 20h-5v-7h5v7zM20 2H2C.89 2 0 2.89 0 4v12c0 1.1.89 2 2 2h7v2H7v2h8v-2h-2v-2h2v-2H2V4h18v5h2V4c0-1.11-.9-2-2-2zm-8.03 7L11 6l-.97 3H7l2.47 1.76-.94 2.91 2.47-1.8 2.47 1.8-.94-2.91L15 9h-3.03z"
+                />
+              </svg>
+              <h2>
+                Gateway Device
+              </h2>
+            </div>
+          </a>
+        </nav>
+      </div>
+      <div
+        class="MuiBox-root MuiBox-root-6 main"
+      >
+        <div
+          class="title-style"
+        >
+          <p
+            class="group-count"
+          >
+            GATEWAYS 
+            <span>
+               
+            </span>
+          </p>
+        </div>
+        <div
+          class="MuiBox-root MuiBox-root-7 groups"
+        >
+          <div
+            class="search-wrapper"
+          >
+            <div
+              class="MuiFormControl-root MuiTextField-root"
+            >
+              <div
+                class="MuiInputBase-root MuiOutlinedInput-root makeStyles-input-5 MuiInputBase-formControl"
+              >
+                <input
+                  aria-invalid="false"
+                  class="MuiInputBase-input MuiOutlinedInput-input"
+                  placeholder="search groups"
+                  type="text"
+                  value=""
+                />
+                <fieldset
+                  aria-hidden="true"
+                  class="PrivateNotchedOutline-root-8 MuiOutlinedInput-notchedOutline"
+                  style="padding-left: 8px;"
+                >
+                  <legend
+                    class="PrivateNotchedOutline-legend-9"
+                    style="width: 0.01px;"
+                  >
+                    <span>
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+            <button
+              class="MuiButton-root MuiButton-outlined MuiButton-outlinedPrimary MuiButton-sizeMedium MuiButton-outlinedSizeMedium MuiButtonBase-root add-door css-17pvzqz-MuiButtonBase-root-MuiButton-root"
+              tabindex="0"
+              type="button"
+            >
+              Add Gateway
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+          <div
+            class="MuiBox-root MuiBox-root-12 group-container"
+          >
+            <div
+              class="MuiBox-root css-i9gxme"
+            >
+              <div
+                class="MuiBox-root css-1bfx0ml"
+              >
+                <span
+                  aria-valuenow="100"
+                  class="MuiCircularProgress-root MuiCircularProgress-determinate MuiCircularProgress-colorPrimary css-nt50a2-MuiCircularProgress-root"
+                  role="progressbar"
+                  style="width: 40px; height: 40px; transform: rotate(-90deg);"
+                >
+                  <svg
+                    class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                    viewBox="22 22 44 44"
+                  >
+                    <circle
+                      class="MuiCircularProgress-circle MuiCircularProgress-circleDeterminate css-oxts8u-MuiCircularProgress-circle"
+                      cx="44"
+                      cy="44"
+                      fill="none"
+                      r="20"
+                      stroke-width="4"
+                      style="stroke-dasharray: 125.664; stroke-dashoffset: 0.000px;"
+                    />
+                  </svg>
+                </span>
+                <span
+                  class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-cu1xbu-MuiCircularProgress-root"
+                  role="progressbar"
+                  style="width: 40px; height: 40px;"
+                >
+                  <svg
+                    class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+                    viewBox="22 22 44 44"
+                  >
+                    <circle
+                      class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate MuiCircularProgress-circleDisableShrink css-79nvmn-MuiCircularProgress-circle"
+                      cx="44"
+                      cy="44"
+                      fill="none"
+                      r="20"
+                      stroke-width="4"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="MuiBox-root MuiBox-root-14 pagination"
+          >
+            <button
+              class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-wgv3o3-MuiButtonBase-root-MuiButton-root"
+              tabindex="0"
+              type="button"
+            >
+              Previous Page
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+            <p
+              class="MuiTypography-root MuiTypography-body1 css-11q0y1n-MuiTypography-root"
+            >
+              Page NaN of NaN
+            </p>
+            <button
+              class="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-wgv3o3-MuiButtonBase-root-MuiButton-root"
+              tabindex="0"
+              type="button"
+            >
+              Next Page
+              <span
+                class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

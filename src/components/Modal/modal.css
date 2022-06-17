@@ -206,3 +206,18 @@ fieldset {
     border-radius: 8px;
     box-shadow: rgb(0 0 0 / 10%) 0px 0px 30px 0px;
 }
+
+.alert{
+    color: red;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.input-space{
+display: flex;
+width: 400px;
+flex-direction: column;
+justify-content: space-between;
+row-gap: 1rem;
+}

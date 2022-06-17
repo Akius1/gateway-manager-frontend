@@ -1,26 +1,25 @@
-import React  from "react";
+import React from "react";
 import "./gateway.css";
 
-import { Box, Typography} from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
-import {useNavigate} from "react-router-dom";
-import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
-import DevicesOtherTwoToneIcon from '@mui/icons-material/DevicesOtherTwoTone';
+import { useNavigate } from "react-router-dom";
+import ImportantDevicesIcon from "@mui/icons-material/ImportantDevices";
+import DevicesOtherTwoToneIcon from "@mui/icons-material/DevicesOtherTwoTone";
 
-const GroupCard = ({ item, setIsLoading}) => {
-    let navigate = useNavigate()
-  const handleClick = () => {
-    setIsLoading(true)
-  
-    setTimeout(()=>{
-        setIsLoading(false)
-        navigate(`/doors`)
-    }, 3000)
-    
+const GroupCard = ({ item, setIsLoading }) => {
+  let navigate = useNavigate();
+  const handleClick = (state) => {
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      navigate(`/device`, { state });
+    }, 3000);
   };
 
   return (
-    <div className="card" onClick={handleClick}>
+    <div className="card" onClick={() => handleClick(item)}>
       <Box className="firts-child">
         <div className="icon-box">
           <DevicesOtherTwoToneIcon color="primary" />
@@ -28,25 +27,27 @@ const GroupCard = ({ item, setIsLoading}) => {
 
         <Box className="group-detail">
           <p className="group-name">{item?.name}</p>
-
         </Box>
       </Box>
-      {
-        item.devices.length > 0 ?
+      {item.devices.length > 0 ? (
         <div className="second-child">
-        <Box className="door-wrapper">
-         <ImportantDevicesIcon color="primary"/>
-          <Typography className="door-text" color="blue">{item?.devices.length}</Typography>
-        </Box>
-      </div>:
-      <div className="second-child">
-      <Box className="door-wrapper">
-       <ImportantDevicesIcon color="warning"/>
-        <Typography className="door-text" color="red">{item?.devices.length}</Typography>
-      </Box>
-    </div>
-      }
-
+          <Box className="door-wrapper">
+            <ImportantDevicesIcon color="primary" />
+            <Typography className="door-text" color="blue">
+              {item?.devices.length}
+            </Typography>
+          </Box>
+        </div>
+      ) : (
+        <div className="second-child">
+          <Box className="door-wrapper">
+            <ImportantDevicesIcon color="warning" />
+            <Typography className="door-text" color="red">
+              {item?.devices.length}
+            </Typography>
+          </Box>
+        </div>
+      )}
     </div>
   );
 };

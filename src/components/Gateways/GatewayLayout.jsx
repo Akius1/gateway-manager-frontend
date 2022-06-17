@@ -8,17 +8,21 @@ import PeripheralDevice from "../Device/peripheralDevice";
 const GroupLayout = ({
   gateways,
   isLoading,
-  setIsLoading,
+  setIsLoading
 }) => {
   return (
+    <>
+
     <Routes>
+      
       <Route
         exact
         path="/"
         element={
           <GatewayDevice
-            isLoading={isLoading}
-            setIsLoading={setIsLoading}
+          gateways={gateways}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
           />
         }
       />
@@ -28,17 +32,17 @@ const GroupLayout = ({
         path="/device"
         element={
           <PeripheralDevice
-            isLoading={isLoading}
             gateways={gateways}
+            isLoading={isLoading}
             setIsLoading={setIsLoading}
           />
         }
       />
     </Routes>
+    </>
   );
 };
 
 export default connect((state) => ({
-  user: state.user_reducer,
-  gateways: state.door_reducer,
+  gateways: state.gateway_reducer,
 }))(GroupLayout);

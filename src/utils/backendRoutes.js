@@ -12,6 +12,6 @@ export const API_URLS = {
 
   DEVICES:{
     addDevice:`${baseUrl}gateway/addDevice/`,
-    addDevice:`${baseUrl}gateway/remove-device/`,
+    removeDevice:`${baseUrl}gateway/remove-device/`,
   },
 };

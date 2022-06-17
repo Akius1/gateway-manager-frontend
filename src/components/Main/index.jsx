@@ -5,32 +5,28 @@ import { connect } from "react-redux";
 
 import {
   retrieveAllGateways,
-  createGateway,
-  clearErrors,
 } from "../../store/actions/gateway.action";
 
 import GatewayLayout from "../Gateways/GatewayLayout";
 
-const Main = ({ gateway, dispatch }) => {
-  const [isLoading, setIsLoading] = useState(false);
-  console.log(gateway, "gateway")
+const Main = ({ gateway,devices, dispatch }) => {
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    dispatch(retrieveAllGateways());
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
+      setIsLoading(true)
+      dispatch(retrieveAllGateways());
+
+      setTimeout(() => {
+        setIsLoading(false)
+      }, 2000);
+   
     //eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [devices.loading]);
 
 
   return (
     <Box className="main">
-      <div className="title-style">
-        <p className="group-count">
-          Gateways <span> {gateway?.response?.data?.length}</span>
-        </p>
-      </div>
+     
 
       <GatewayLayout
         gateway={gateway}
@@ -43,4 +39,5 @@ const Main = ({ gateway, dispatch }) => {
 
 export default connect((state) => ({
   gateway: state.gateway_reducer,
+  devices: state.peripheral_reducer
 }))(Main);

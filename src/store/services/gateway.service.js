@@ -7,7 +7,7 @@ export const gatewayService = {
     getAllGateway,
     getById,
     addDevice,
-
+    removeDevice
 }
 
 function addGateway(data){
@@ -26,6 +26,6 @@ function addDevice(id, data){
     return apiCall("PATCH", `${API_URLS.DEVICES.addDevice}${id}`,null, data)
 }
 
-export function removeDevice(gatewayId,deviceId){
-    return apiCall("PATCH", `${API_URLS.DEVICES.removeDevice}${gatewayId}/${deviceId}`,null,null,)
+ function removeDevice(gatewayId,deviceId){
+    return apiCall("PATCH", `${API_URLS.DEVICES.removeDevice}${gatewayId}/${deviceId}`, null, )
 }
