@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Box, TextField } from "@material-ui/core";
 import "./gateway.css";
@@ -13,26 +13,24 @@ import FormDialog from "../Modal";
 
 const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
   const classes = useStyle();
+  let PageSize = 5;
+  const [currentPage, setCurrentPage] = useState(1);
 
   let groupData = gateway?.response;
 
   let paginationDetail = gateway?.response?.length;
-  let offSet = (count) => {
-    if (count <= 10) {
-      return 0;
-    } else if (count > 10 && count <= 20) {
-      return 10;
-    } else if (count > 20 && count <= 30) {
-      return 20;
-    }
-  };
 
-  let maxPage = Math.ceil(paginationDetail/ 10);
-  let currentPage = Math.floor(1 + paginationDetail/ 10);
+  const firstPageIndex = (currentPage - 1) * PageSize;
+  const lastPageIndex = firstPageIndex + PageSize;
+
+  let displayData = groupData.slice(firstPageIndex, lastPageIndex);
+
+  let maxPage = Math.ceil(paginationDetail / PageSize);
+  // let currentPage = Math.floor(1 + paginationDetail/ 10);
 
   const nextPage = () => {
     setIsLoading(true);
-
+    setCurrentPage((prev) => prev + 1);
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -40,7 +38,7 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
 
   const prevPage = () => {
     setIsLoading(true);
-
+    setCurrentPage((prev) => prev - 1);
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -49,7 +47,8 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
     <>
       <div className="title-style">
         <p className="group-count">
-          GATEWAYS <span data-testid="counter"> {gateway?.response?.length}</span>
+          GATEWAYS{" "}
+          <span data-testid="counter"> {gateway?.response?.length}</span>
         </p>
       </div>
 
@@ -74,7 +73,7 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
           {isLoading ? (
             <CustomizedProgressBars />
           ) : !isLoading && groupData?.length > 0 ? (
-            groupData?.map((item) => (
+            displayData?.map((item) => (
               <GatewayCard
                 key={item?.id}
                 item={item}
@@ -92,9 +91,7 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
         <Box className="pagination" sx={{ "& button": { m: 1 } }}>
           <Button
             variant="text"
-            disabled={
-              paginationDetail?.count <= 10 || paginationDetail?.offset < 10
-            }
+            disabled={currentPage < 2}
             sx={{
               textAlign: "center",
               fontFamily: "Inter, sans-serif",
@@ -127,9 +124,9 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
           </Typography>
           <Button
             disabled={
-              paginationDetail?.count <= 10 ||
-              offSet(paginationDetail?.count) === 0 ||
-              gateway?.response?.length < 10
+              paginationDetail <= PageSize ||
+              gateway?.response?.length <= PageSize ||
+              maxPage === currentPage
             }
             sx={{
               textAlign: "center",

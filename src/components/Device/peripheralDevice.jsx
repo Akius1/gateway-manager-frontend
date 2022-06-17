@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { Box } from "@mui/material";
+import React, {useState, useEffect } from "react";
+import { Box, Typography } from "@mui/material";
 import "../Gateways/gateway.css";
 import "./device.css";
 import DeviceCard from "./deviceCard";
@@ -10,6 +10,7 @@ import { connect } from "react-redux";
 import { useLocation } from "react-router-dom";
 import { getGatewayById } from "../../store/actions/gateway.action";
 
+
 const PeripheralDevice = ({
   isLoading,
   devices,
@@ -17,7 +18,8 @@ const PeripheralDevice = ({
   dispatch,
 }) => {
 
- 
+  let PageSize = 5;
+  const [currentPage, setCurrentPage] = useState(1);
 const {state} = useLocation()
 
 useEffect(()=>{
@@ -29,6 +31,31 @@ useEffect(()=>{
 }, [state])
 
 let groupData = devices?.response?.devices;
+
+const firstPageIndex = (currentPage - 1) * PageSize;
+const lastPageIndex = firstPageIndex + PageSize;
+let paginationDetail = groupData?.length;
+
+let displayData = groupData.slice(firstPageIndex, lastPageIndex);
+
+
+let maxPage = Math.ceil(paginationDetail/ PageSize);
+
+const nextPage = () => {
+  setIsLoading(true);
+  setCurrentPage((prev) => prev + 1)
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
+};
+
+const prevPage = () => {
+  setIsLoading(true);
+  setCurrentPage((prev) => prev - 1)
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
+};
   
 
   return (
@@ -74,7 +101,7 @@ let groupData = devices?.response?.devices;
           <CustomizedProgressBars />
         ) : groupData?.length ? (
           <Box className="doors-container">
-            {groupData?.map((item) => (
+            {displayData?.map((item) => (
               <DeviceCard
                 key={item?.id}
                 item={item}
@@ -93,68 +120,67 @@ let groupData = devices?.response?.devices;
             <p className="empty-text">You haven't added any device</p>
           </Box>
         )}
-        {/* {groupData?.length ? (
-          <Box className="pagination" sx={{ "& button": { m: 1 } }}>
-            <Button
-              variant="text"
-              disabled={
-                paginationDetail?.count <= 10 || paginationDetail?.offset < 10
-              }
-              sx={{
-                textAlign: "center",
-                fontFamily: "Inter, sans-serif",
-                fontStretch: "normal",
-                letterSpacing: "normal",
-                fontSize: "12px",
-                lineHeight: "18px",
-                fontWeight: 400,
-                textTransform: "none",
-                color: "rgb(74, 82, 255)",
-              }}
-              onClick={prevPage}
-            >
-              Previous Page
-            </Button>
-            <Typography
-              sx={{
-                textAlign: "center",
-                fontFamily: "Inter, sans-serif",
-                fontStretch: "normal",
-                letterSpacing: "normal",
-                color: "#191919",
-                fontSize: "12px",
-                lineHeight: "18px",
-                fontWeight: 400,
-                textTransform: "none",
-              }}
-            >
-              Page {currentPage} of {maxPage}
-            </Typography>
-            <Button
-              disabled={
-                paginationDetail?.count <= 10 ||
-                offSet(paginationDetail?.count) === 0 ||
-                devices?.response?.data?.length < 10
-              }
-              sx={{
-                textAlign: "center",
-                fontFamily: "Inter, sans-serif",
-                fontStretch: "normal",
-                letterSpacing: "normal",
-                fontSize: "12px",
-                lineHeight: "18px",
-                fontWeight: 400,
-                textTransform: "none",
-                color: "rgb(74, 82, 255)",
-              }}
-              onClick={nextPage}
-            >
-              Next Page
-            </Button>
-          </Box>
+        {groupData?.length ? (
+           <Box className="pagination" sx={{ "& button": { m: 1 } }}>
+           <Button
+             variant="text"
+             disabled={currentPage < 2}
+             sx={{
+               textAlign: "center",
+               fontFamily: "Inter, sans-serif",
+               fontStretch: "normal",
+               letterSpacing: "normal",
+               fontSize: "12px",
+               lineHeight: "18px",
+               fontWeight: 400,
+               textTransform: "none",
+               color: "rgb(74, 82, 255)",
+             }}
+             onClick={prevPage}
+           >
+             Previous Page
+           </Button>
+           <Typography
+             sx={{
+               textAlign: "center",
+               fontFamily: "Inter, sans-serif",
+               fontStretch: "normal",
+               letterSpacing: "normal",
+               color: "#191919",
+               fontSize: "12px",
+               lineHeight: "18px",
+               fontWeight: 400,
+               textTransform: "none",
+             }}
+           >
+             Page {currentPage} of {maxPage}
+           </Typography>
+           <Button
+             disabled={
+               paginationDetail <= PageSize ||
+               groupData.length <= PageSize ||
+               maxPage === currentPage
+             }
+             sx={{
+               textAlign: "center",
+               fontFamily: "Inter, sans-serif",
+               fontStretch: "normal",
+               letterSpacing: "normal",
+               fontSize: "12px",
+               lineHeight: "18px",
+               fontWeight: 400,
+               textTransform: "none",
+               color: "rgb(74, 82, 255)",
+             }}
+             onClick={nextPage}
+             data-testid="button"
+           >
+             Next Page
+           </Button>
+         </Box>
         ) : (
           ""
-        )} */}
+        )}
       </Box>
       {/* } */}
     </Box>
