@@ -1,7 +1,7 @@
 import React from "react";
 import "./sidebar.css";
 
-import HomeIcon from "@material-ui/icons/Home";
+import HomeIcon from "@mui/icons-material/Home";
 import ImportantDevicesIcon from "@mui/icons-material/ImportantDevices";
 
 import SidebarLink from "./sidebarlink";

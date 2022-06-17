@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
-import { Box, TextField } from "@material-ui/core";
+import { Box, TextField } from "@mui/material";
 import "./gateway.css";
 import "../Device/device.css";
 import { useStyle } from "../../style/style";

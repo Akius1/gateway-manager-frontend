@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
 import "./device.css";
 import { connect } from "react-redux";
 import { getGatewayById, removeDeviceFromGateway } from "../../store/actions/gateway.action";
