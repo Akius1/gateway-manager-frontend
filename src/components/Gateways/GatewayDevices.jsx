@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Box, TextField } from "@mui/material";
 import "./gateway.css";
 import "../Device/device.css";
-import { useStyle } from "../../style/style";
 import GatewayCard from "./gatewayCard";
 import CustomizedProgressBars from "../CircularProgressBar";
 import Button from "@mui/material/Button";
@@ -11,8 +10,7 @@ import { Typography } from "@mui/material";
 import DevicesIcon from "@mui/icons-material/Devices";
 import FormDialog from "../Modal";
 
-const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
-  const classes = useStyle();
+const GatewayDevices = ({ gateway, isLoading, setIsLoading }) => {
   let PageSize = 5;
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -57,9 +55,6 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading, dispatch }) => {
           <TextField
             placeholder="search groups"
             variant="outlined"
-            InputProps={{
-              className: classes.input,
-            }}
           />
           <FormDialog
             screenFrom="gateway"

@@ -1,22 +1,31 @@
-import { Box, TextField, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React from "react";
-import { useStyle } from "../../style/style";
 
 const Header = () => {
-  const classes = useStyle();
   return (
-    <Box elavation={1} className={classes.navStyle} sx={{ width: "100%" }}>
-
+    <Box
+      elavation={1}
+      sx={{
+        backgroundColor: "#222647",
+        color: "rgb(255, 255, 255)",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "20px 50px",
+        width: "100%",
+        height: "65px",
+        boxSizing: "border-box",
+        flexShrink: 0,
+        position: "sticky",
+        zIndex: 1100,
+        top: "0px",
+        left: "auto",
+        right: "0px",
+      }}
+    >
       <Typography children="GATEWAY SERVICE" />
-      <TextField
-        className={classes.textField}
-        id="outlined-search"
-        placeholder="Search field"
-        type="search"
-        InputProps={{
-          className: classes.input,
-        }}
-      />
+      
     </Box>
   );
 };

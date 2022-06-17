@@ -4,7 +4,7 @@ import GatewayDevices from "./GatewayDevices"
 import {Provider} from "react-redux";
 import { createStore } from 'redux'
 import {initialState, gatewayReducer} from "../../store/reducers/gateway";
-import { PersistGate } from "redux-persist/integration/react";
+i
 
 
 const renderWithRedux = (
