@@ -1,28 +1,11 @@
 import React from "react";
 import { Box } from "@material-ui/core";
-import "./doors.css";
+import "./device.css";
 import { connect } from "react-redux";
-import { DoorService } from "../../store/services/door.service";
-import environment from "../../environment";
-import { doorAction } from "../../store/actions/doors.action";
 
 const DeviceCard = ({ item, dispatch, setIsLoading, isLoading, state }) => {
   const deleteGroupDoor = (doorId) => {
-    setIsLoading(true);
-    DoorService?.removeGroupLock(
-      environment.domain,
-      environment.email,
-      environment.password,
-      doorId
-    );
-    dispatch(
-      doorAction(
-        environment.domain,
-        environment.email,
-        environment.password,
-        item?.groupId
-      )
-    );
+    
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);

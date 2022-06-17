@@ -2,13 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 
 import {  Routes, Route } from "react-router-dom";
-import GroupDoors from "./GatewayDoors";
-import Locks from "../Doors/Locks";
+import GatewayDevice from "./GatewayDoors";
+import PeripheralDevice from "../Device/peripheralDevice";
 
 const GroupLayout = ({
-  state,
-  setState,
-  groupLocks,
+  gateways,
   isLoading,
   setIsLoading,
 }) => {
@@ -18,10 +16,8 @@ const GroupLayout = ({
         exact
         path="/"
         element={
-          <GroupDoors
+          <GatewayDevice
             isLoading={isLoading}
-            setState={setState}
-            state={state}
             setIsLoading={setIsLoading}
           />
         }
@@ -29,13 +25,11 @@ const GroupLayout = ({
 
       <Route
         exact
-        path="/doors"
+        path="/device"
         element={
-          <Locks
+          <PeripheralDevice
             isLoading={isLoading}
-            groupLocks={groupLocks}
-            setState={setState}
-            state={state}
+            gateways={gateways}
             setIsLoading={setIsLoading}
           />
         }
@@ -46,5 +40,5 @@ const GroupLayout = ({
 
 export default connect((state) => ({
   user: state.user_reducer,
-  groupLocks: state.door_reducer,
+  gateways: state.door_reducer,
 }))(GroupLayout);

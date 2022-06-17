@@ -6,12 +6,10 @@ import DeviceCard from "./deviceCard";
 import FormDialog from "../Modal";
 import CustomizedProgressBars from "../CircularProgressBar";
 import Button from "@mui/material/Button";
-import environment from "../../environment";
 import { connect } from "react-redux";
-import { groupAction } from "../../store/actions/groups.action";
 import { Typography } from "@mui/material";
 
-const DeviceLocks = ({isLoading, groupLocks, state, setIsLoading,  dispatch}) => {
+const PeripheralDevice = ({isLoading, groupLocks, state, setIsLoading,  dispatch}) => {
 
     let groupData =groupLocks?.response?.data;
 
@@ -28,18 +26,10 @@ const DeviceLocks = ({isLoading, groupLocks, state, setIsLoading,  dispatch}) =>
 
   let maxPage = Math.ceil(paginationDetail?.count / 10);
   let currentPage = Math.floor(1 + paginationDetail?.offset / 10);
-  console.log("page", currentPage);
 
   const nextPage = () => {
     setIsLoading(true);
-    dispatch(
-      groupAction(
-        environment.domain,
-        environment.email,
-        environment.password,
-        offSet(paginationDetail?.count)
-      )
-    );
+  
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -47,14 +37,7 @@ const DeviceLocks = ({isLoading, groupLocks, state, setIsLoading,  dispatch}) =>
 
   const prevPage = () => {
     setIsLoading(true);
-    dispatch(
-      groupAction(
-        environment.domain,
-        environment.email,
-        environment.password,
-        offSet(paginationDetail?.count) - 10
-      )
-    );
+ 
     setTimeout(() => {
       setIsLoading(false);
     }, 2000);
@@ -205,4 +188,4 @@ const DeviceLocks = ({isLoading, groupLocks, state, setIsLoading,  dispatch}) =>
 
 export default connect((state) => ({
     groups: state.groups_reducer,
-  }))(DeviceLocks);
+  }))(PeripheralDevice);
