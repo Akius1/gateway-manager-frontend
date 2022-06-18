@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# gateway-manager-Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This sample project is managing gateways - master devices that control multiple peripheral
+devices. 
 
-## Available Scripts
+## Expectations
+1. create a REST service (JSON/HTTP) for storing information about these
+gateways and their associated devices.
+2. The service must also offer an operation for displaying information about all stored gateways (and their devices) and an operation for displaying details for a single gateway.
+3. The service must offer an operation to add and remove peripheral device.
+4. When storing a gateway, any field marked as “to be validated” must be validated and an error returned if it is invalid
 
-In the project directory, you can run:
 
-### `npm start`
+## Stacks used
+1. React Js - Frontend implementations
+2. Redux - To manage the states
+3. Material Ui for styling across the app
+4. React Testing Library for test
+4. Github action and Heroku for CI/CD.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### URLS AND API
+Hosted Frontend Url:  https://mu-gateway.herokuapp.com/
+Hosted Backend_url: https://gateway-device.herokuapp.com/api/
+GithUrl: https://github.com/Akius1/gateway-manager-backend/tree/main,
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Postman Collection URL: https://documenter.getpostman.com/view/12925033/UzBmLSXm
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Getting Started:
 
-### `npm run build`
+1. Clone repository : https://github.com/Akius1/gateway-manager-frontend.git
+2. Install depencies : npm install
+3. Start the application : npm run start
+4. Or simply visit the Frontend URl: https://mu-gateway.herokuapp.com/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Additional Features
+1. CI/CD
+2. Unit tested all endpoints
+3. Pagination
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
