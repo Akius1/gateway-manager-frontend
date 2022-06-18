@@ -20,7 +20,9 @@ gateways and their associated devices.
 
 ### URLS AND API
 Hosted Frontend Url:  https://mu-gateway.herokuapp.com/
+
 Hosted Backend_url: https://gateway-device.herokuapp.com/api/
+
 GithUrl: https://github.com/Akius1/gateway-manager-backend/tree/main,
 
 Postman Collection URL: https://documenter.getpostman.com/view/12925033/UzBmLSXm
