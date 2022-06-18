@@ -21,7 +21,7 @@ const GatewayDevices = ({ gateway, isLoading, setIsLoading }) => {
   const firstPageIndex = (currentPage - 1) * PageSize;
   const lastPageIndex = firstPageIndex + PageSize;
 
-  let displayData = groupData.slice(firstPageIndex, lastPageIndex);
+  let displayData = groupData?.slice(firstPageIndex, lastPageIndex);
 
   let maxPage = Math.ceil(paginationDetail / PageSize);
   // let currentPage = Math.floor(1 + paginationDetail/ 10);

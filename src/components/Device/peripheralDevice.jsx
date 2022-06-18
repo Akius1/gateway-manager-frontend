@@ -36,7 +36,7 @@ const firstPageIndex = (currentPage - 1) * PageSize;
 const lastPageIndex = firstPageIndex + PageSize;
 let paginationDetail = groupData?.length;
 
-let displayData = groupData.slice(firstPageIndex, lastPageIndex);
+let displayData = groupData?.slice(firstPageIndex, lastPageIndex);
 
 
 let maxPage = Math.ceil(paginationDetail/ PageSize);
